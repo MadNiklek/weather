@@ -26,6 +26,6 @@ def index(request):
             'icon' : r['weather'][0]['icon'],
         }
         weather_data.append(city_weather)
-
+    weather_data.reverse()
     context = {'weather_data' : weather_data, 'form' : form}
     return render(request, 'weather/weather.html', context)
